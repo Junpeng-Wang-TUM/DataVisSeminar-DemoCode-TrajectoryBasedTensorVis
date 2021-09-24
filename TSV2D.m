@@ -26,7 +26,6 @@ function Setup()
 	global eleSize_;
 	global tracingStepWidth_;
 	global relaxedFactor_;
-	global degeneratePoints_;
 	global majorPSLpool_;
 	global minorPSLpool_;
 	
@@ -392,7 +391,6 @@ function val = AngleTerminationCondition(dirct1, dirct2)
 end
 
 function targetDirection = DirectionSelecting(originalVec, Vec1, Vec2)
-	normOriVec = norm(originalVec); normVec1 = norm(Vec1); normVec2 = norm(Vec2);
 	angle1 = acos(originalVec*Vec1');
 	angle2 = acos(originalVec*Vec2');
 	if angle1 < angle2
@@ -528,7 +526,6 @@ function CreatePSLsViaTSV(resCtrl)
 		its = its + 1;
 		valenceMetric = sum(seedPointsValence_,2);
 		unFinishedSpps = find(valenceMetric<2);
-		spp = unFinishedSpps(1);
 		if 0==looper
 			[~, spp] = min(vecnorm(startCoord_-seedPoints_,2,2));
 		else
