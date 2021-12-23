@@ -5,7 +5,7 @@
 clear
 clc
 
-stressfileName = './data/cantilever2D_R500_iLoad5.vtk';
+stressfileName = './data/cantilever2D_R500_iLoad5.carti';
 PSLsDensityCtrl = 20; %% control the density of the stress trajectories (positively-related)
 
 TSV2D(stressfileName,PSLsDensityCtrl);
